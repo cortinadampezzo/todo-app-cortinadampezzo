@@ -29,10 +29,10 @@ window.addEventListener('load', function() {
         webAuth.authorize();
     });
 
-    homeViewBtn.addEventListener('click', function() {
-        homeView.style.display = 'inline-block';
-        loginView.style.display = 'none';
-    });
+    // homeViewBtn.addEventListener('click', function() {
+    //     homeView.style.display = 'inline-block';
+    //     loginView.style.display = 'none';
+    // });
 
     logoutBtn.addEventListener('click', logout);
 
@@ -62,6 +62,7 @@ window.addEventListener('load', function() {
             authResult.expiresIn * 1000 + new Date().getTime()
         );
         accessToken = authResult.accessToken;
+        localStorage.setItem("accessToken", accessToken);
         idToken = authResult.idToken;
         location.reload();
     }
